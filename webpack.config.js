@@ -38,9 +38,7 @@ module.exports = function (_env, argv) {
               options: {
                 injectType: "lazyStyleTag",
                 insert: function insertIntoTarget(element, options) {
-                  console.log("inside style loader insert");
                   var parent = options.target || document.head;
-
                   parent.appendChild(element);
                 },
               },
@@ -90,7 +88,7 @@ module.exports = function (_env, argv) {
       }),
       new webpack.DefinePlugin({
         "process.env.NODE_ENV": JSON.stringify(
-          isProduction ? "production" : "development",
+          isProduction ? "production" : "development"
         ),
       }),
     ].filter(Boolean),
@@ -124,7 +122,7 @@ module.exports = function (_env, argv) {
             test: /[\\/]node_modules[\\/]/,
             name(module, chunks, cacheGroupKey) {
               const packageName = module.context.match(
-                /[\\/]node_modules[\\/](.*?)([\\/]|$)/,
+                /[\\/]node_modules[\\/](.*?)([\\/]|$)/
               )[1];
               return `${cacheGroupKey}.${packageName.replace("@", "")}`;
             },

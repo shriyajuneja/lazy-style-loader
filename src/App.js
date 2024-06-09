@@ -7,16 +7,12 @@ export default function App() {
   const [show, setShow] = useState(false);
   return (
     <div>
-      <h1>Hello CodeSandbox</h1>
-      <h2>Start editing to see some magic happen!</h2>
-      <button onClick={() => setShow((prevValue) => !prevValue)}>
-        {" "}
-        Toggle{" "}
-      </button>
+      <h1>Style-loader</h1>
+      <button onClick={() => setShow((prevValue) => !prevValue)}>Toggle</button>
       <br />
       <Frame>
         <>
-          <div>hello iframe 1</div>
+          <div>iframe 1</div>
           {show && <Button />}
           <Button />
         </>
@@ -24,7 +20,7 @@ export default function App() {
       <br />
       <Frame>
         <>
-          <div>hello iframe 2</div>
+          <div>iframe 2</div>
           <Button />
         </>
       </Frame>
